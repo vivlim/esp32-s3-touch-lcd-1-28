@@ -74,7 +74,7 @@ fn app_main() -> anyhow::Result<()> {
     let shared_orientation_cpy = shared_orientation.clone();
     let shared_cursor_cpy = shared_cursor.clone();
     let _thread_1 = std::thread::Builder::new()
-        .stack_size(7000 + (240 * 240 * 2) + (240 * 12))
+        .stack_size(7000 + (240 * 240 * 2) + (240 * 12) + 7000)
         .spawn(move || {
             thread_display(ThreadDisplayData {
                 shared_orientation: shared_orientation_cpy,
